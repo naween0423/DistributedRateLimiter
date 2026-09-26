@@ -28,3 +28,18 @@ services:
     container_name: redis
     ports:
       - "6379:6379"
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: rate_limiter
+      POSTGRES_USER: rate_limiter
+      POSTGRES_PASSWORD: rate_limiter_dev
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

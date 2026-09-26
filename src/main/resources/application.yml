@@ -18,6 +18,14 @@ spring:
     redis:
       host: localhost
       port: 6379
+  datasource:
+    url: jdbc:postgresql://localhost:5432/rate_limiter
+    username: rate_limiter
+    password: rate_limiter_dev
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
 
 rate-limit:
   capacity: 100
